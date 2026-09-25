@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Inquiries | Dwelve Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090a0f;
+      --card: #12151f;
+      --amber: #ffaa00;
+      --text: #cbd5e1;
+      --border: rgba(255, 170, 0, 0.2);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; padding-top: 100px; padding-bottom: 60px; }
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: rgba(9, 10, 15, 0.94); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border); z-index: 100;
+      padding: 16px 36px; display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: 2px; color: #fff; text-decoration: none; }
+    .brand span { color: var(--amber); }
+    .nav-links { display: flex; gap: 26px; }
+    .nav-links a { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: #94a3b8; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
+    .nav-links a:hover, .nav-links a.active { color: var(--amber); }
+    .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 38px; width: 100%; }
+    .badge { font-family: 'Space Grotesk', sans-serif; font-size: 11px; color: var(--amber); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+    h1 { font-family: 'Syne', sans-serif; font-size: 32px; color: #fff; margin-bottom: 8px; }
+    p { font-size: 14px; color: #94a3b8; margin-bottom: 26px; }
+    .form-group { margin-bottom: 18px; }
+    label { display: block; font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; color: #cbd5e1; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+    .form-control { width: 100%; background: #090a0f; border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px; color: #fff; font-family: inherit; font-size: 14px; }
+    .form-control:focus { outline: none; border-color: var(--amber); }
+    .btn { width: 100%; background: var(--amber); color: #090a0f; font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 14px; border: none; border-radius: 4px; cursor: pointer; transition: 0.3s; margin-top: 10px; }
+    .btn:hover { box-shadow: 0 0 25px rgba(255, 170, 0, 0.5); }
+    .info { margin-top: 24px; text-align: center; font-size: 12px; color: #64748b; font-family: monospace; }
+    footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; font-size: 12px; color: #64748b; font-family: monospace; margin-top: 60px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="brand">DWELVE<span>//</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="games.html">Games</a>
+      <a href="services.html">Services</a>
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="card">
+      <div class="badge">// REACH OUT</div>
+      <h1>INITIATE TRANSMISSION</h1>
+      <p>Contact Dwelve for co-development, publisher inquiries, or user acquisition consulting.</p>
+      <!-- If hosted on Netlify, adding netlify attribute makes this form work automatically -->
+      <form name="inquiry" method="POST" data-netlify="true" onsubmit="event.preventDefault(); alert('Transmission Received. Dwelve team will contact you at ' + this.email.value);">
+        <div class="form-group">
+          <label>Name or Organization</label>
+          <input type="text" name="name" class="form-control" placeholder="e.g. Apex Publishing" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" class="form-control" placeholder="name@company.com" required>
+        </div>
+        <div class="form-group">
+          <label>Collaboration Focus</label>
+          <select name="service" class="form-control">
+            <option>Full-Cycle Game Development</option>
+            <option>Meta Quest VR Optimization / Porting</option>
+            <option>Playable Ads & Performance Marketing</option>
+            <option>Publishing & Co-Production</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Project Scope</label>
+          <textarea name="message" class="form-control" rows="4" placeholder="Detail your project timeline, target platform, or technical requirements..."></textarea>
+        </div>
+        <button type="submit" class="btn">Transmit Inquiry</button>
+      </form>
+      <div class="info">DIRECT INBOX: DWELVE0@GMAIL.COM</div>
+    </div>
+  </div>
+
+  <footer>DWELVE STUDIOS © 2026 • DIRECT INBOX: DWELVE0@GMAIL.COM</footer>
+</body>
+</html>

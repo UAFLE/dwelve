@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dwelve | 3D Game Engineering & VR Simulation Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <style>
+    :root {
+      --bg: #090a0f;
+      --card: #12151f;
+      --amber: #ffaa00;
+      --cyan: #00e5ff;
+      --text: #cbd5e1;
+      --border: rgba(255, 170, 0, 0.25);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: rgba(9, 10, 15, 0.92); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border); z-index: 100;
+      padding: 16px 36px; display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: 2px; color: #fff; text-decoration: none; }
+    .brand span { color: var(--amber); }
+    .nav-links { display: flex; gap: 26px; }
+    .nav-links a {
+      font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700;
+      color: #94a3b8; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--amber); }
+    #hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; }
+    #canvas-box { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+    .hero-content { position: relative; z-index: 2; text-align: center; max-width: 880px; padding: 0 20px; pointer-events: none; }
+    .badge {
+      display: inline-block; font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase; color: var(--amber); background: rgba(255, 170, 0, 0.1);
+      border: 1px solid var(--border); padding: 6px 16px; border-radius: 4px; margin-bottom: 24px; pointer-events: auto;
+    }
+    h1 {
+      font-family: 'Syne', sans-serif; font-size: clamp(38px, 6vw, 76px); font-weight: 800; color: #fff;
+      line-height: 1.05; text-transform: uppercase; margin-bottom: 20px;
+    }
+    h1 span { background: linear-gradient(135deg, #ffffff 20%, var(--amber) 80%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    p { font-size: 16px; color: #94a3b8; max-width: 680px; margin: 0 auto 36px; line-height: 1.6; }
+    .btn-group { display: flex; gap: 16px; justify-content: center; pointer-events: auto; }
+    .btn {
+      font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: 14px 34px; border-radius: 4px; text-decoration: none; transition: 0.3s;
+    }
+    .btn-primary { background: var(--amber); color: #090a0f; box-shadow: 0 0 25px rgba(255, 170, 0, 0.35); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 40px rgba(255, 170, 0, 0.6); }
+    .btn-outline { border: 1px solid var(--border); color: #fff; background: rgba(18, 21, 31, 0.6); }
+    .btn-outline:hover { border-color: var(--amber); color: var(--amber); }
+    .telemetry { position: absolute; bottom: 20px; right: 24px; z-index: 2; font-family: monospace; font-size: 11px; color: var(--amber); }
+    footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; font-size: 12px; color: #64748b; font-family: monospace; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="brand">DWELVE<span>//</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="games.html">Games</a>
+      <a href="services.html">Services</a>
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div id="hero">
+    <div id="canvas-box"></div>
+    <div class="hero-content">
+      <div class="badge">DWELVE STUDIOS // VR & RACING KINEMATICS</div>
+      <h1>WE BUILD <span>WORLDS THAT MOVE</span></h1>
+      <p>Precision 3D vehicle physics engineering, competitive multiplayer networking, and scaled user acquisition across Standalone VR, PC, and Mobile platforms.</p>
+      <div class="btn-group">
+        <a href="games.html" class="btn btn-primary">Our Games</a>
+        <a href="services.html" class="btn btn-outline">Studio Services</a>
+      </div>
+    </div>
+    <div class="telemetry">CORE: ACTIVE // 60 FPS SIM LOOP</div>
+  </div>
+
+  <footer>DWELVE STUDIOS © 2026 • DIRECT INBOX: DWELVE0@GMAIL.COM</footer>
+
+  <script>
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    document.getElementById('canvas-box').appendChild(renderer.domElement);
+
+    const geom = new THREE.OctahedronGeometry(2.5, 2);
+    const mat = new THREE.MeshBasicMaterial({ color: 0xffaa00, wireframe: true, transparent: true, opacity: 0.65 });
+    const mesh = new THREE.Mesh(geom, mat);
+    scene.add(mesh);
+
+    const innerGeom = new THREE.IcosahedronGeometry(1.3, 0);
+    const innerMat = new THREE.MeshBasicMaterial({ color: 0x00e5ff, wireframe: true });
+    const inner = new THREE.Mesh(innerGeom, innerMat);
+    scene.add(inner);
+
+    const grid = new THREE.GridHelper(40, 40, 0xffaa00, 0x1a2133);
+    grid.position.y = -3.2;
+    scene.add(grid);
+
+    camera.position.z = 7;
+    let mouseX = 0, mouseY = 0;
+    window.addEventListener('mousemove', (e) => {
+      mouseX = (e.clientX / window.innerWidth) - 0.5;
+      mouseY = (e.clientY / window.innerHeight) - 0.5;
+    });
+
+    function animate() {
+      requestAnimationFrame(animate);
+      mesh.rotation.y += 0.007; mesh.rotation.x += 0.004;
+      inner.rotation.y -= 0.01;
+      camera.position.x += (mouseX * 2 - camera.position.x) * 0.05;
+      camera.position.y += (-mouseY * 2 - camera.position.y) * 0.05;
+      camera.lookAt(scene.position);
+      renderer.render(scene, camera);
+    }
+    animate();
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
