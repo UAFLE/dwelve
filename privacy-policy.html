@@ -17,7 +17,7 @@
       --border: rgba(255, 170, 0, 0.2);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; padding-top: 100px; padding-bottom: 60px; line-height: 1.65; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; padding-top: 100px; padding-bottom: 60px; line-height: 1.7; }
     nav {
       position: fixed; top: 0; left: 0; width: 100%;
       background: rgba(9, 10, 15, 0.94); backdrop-filter: blur(14px);
@@ -30,20 +30,18 @@
     .nav-links a { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: #94a3b8; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
     .nav-links a:hover, .nav-links a.active { color: var(--amber); }
     .container { max-width: 960px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 40px; }
-    .badge { font-family: 'Space Grotesk', sans-serif; font-size: 11px; color: var(--amber); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; display: inline-block; background: rgba(255, 170, 0, 0.1); padding: 4px 10px; border-radius: 4px; }
-    h1 { font-family: 'Syne', sans-serif; font-size: 32px; color: #fff; margin-bottom: 12px; }
-    h2 { font-family: 'Syne', sans-serif; font-size: 18px; color: var(--amber); margin-top: 34px; margin-bottom: 12px; border-left: 3px solid var(--amber); padding-left: 10px; }
-    h3 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; color: #fff; margin-top: 18px; margin-bottom: 6px; }
-    p, li { font-size: 14px; color: var(--text-muted); margin-bottom: 10px; }
-    ul { padding-left: 20px; margin-bottom: 14px; }
+    .badge { font-family: 'Space Grotesk', sans-serif; font-size: 11px; color: var(--amber); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; display: inline-block; background: rgba(255, 170, 0, 0.1); padding: 4px 10px; border-radius: 4px; }
+    h1 { font-family: 'Syne', sans-serif; font-size: 32px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+    .meta-dates { font-family: 'Space Grotesk', monospace; font-size: 13px; color: var(--amber); margin-bottom: 20px; }
+    h2 { font-family: 'Syne', sans-serif; font-size: 18px; color: var(--amber); margin-top: 36px; margin-bottom: 12px; border-left: 3px solid var(--amber); padding-left: 10px; }
+    h3 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; color: #fff; margin-top: 18px; margin-bottom: 8px; }
+    p, li { font-size: 14px; color: var(--text-muted); margin-bottom: 12px; }
+    ul { padding-left: 24px; margin-bottom: 16px; }
+    li { margin-bottom: 6px; }
     strong { color: #fff; }
     a { color: var(--amber); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .table-box { overflow-x: auto; margin: 18px 0; border: 1px solid var(--border); border-radius: 6px; }
-    table { width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; }
-    th { background: rgba(255, 170, 0, 0.1); color: var(--amber); font-family: 'Space Grotesk', sans-serif; padding: 10px 12px; font-weight: 700; border-bottom: 1px solid var(--border); white-space: nowrap; }
-    td { padding: 10px 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: #cbd5e1; vertical-align: top; }
-    tr:last-child td { border-bottom: none; }
+    .sub-section-title { font-family: 'Space Grotesk', sans-serif; font-size: 15px; color: #fff; margin-top: 14px; margin-bottom: 6px; font-weight: 700; }
     footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; font-size: 12px; color: #64748b; font-family: monospace; margin-top: 60px; }
   </style>
 </head>
@@ -60,89 +58,215 @@
   </nav>
 
   <div class="container">
-    <div class="badge">META HORIZON OS & QUEST STORE COMPLIANT</div>
+    <div class="badge">META QUEST & META HORIZON STORE COMPLIANT</div>
     <h1>PRIVACY POLICY</h1>
-    <p><strong>Effective Date:</strong> June 1, 2026 | <strong>Last Updated:</strong> September 25, 2026</p>
-    <p>Dwelve ("we," "our," or "us") respects your privacy and is dedicated to handling your data transparently. This Privacy Policy details how we collect, process, store, and protect information when you play our games (including <em>TruckX</em>, <em>City Bus Simulator</em>, <em>Go Kart Simulator</em>, and <em>RacerX</em>) across the Meta Quest platform and associated platforms.</p>
+    <div class="meta-dates">Effective Date: June 1, 2026 | Last Updated: September 25, 2026</div>
 
-    <h2>1. Contact & Data Controller Information</h2>
-    <p><strong>Developer Organization:</strong> Dwelve<br>
-    <strong>Direct Privacy & Data Protection Contact:</strong> <a href="mailto:dwelve0@gmail.com">dwelve0@gmail.com</a></p>
+    <p>Dwelve ("Dwelve," "we," "our," or "us") respects your privacy and is committed to handling information responsibly and transparently.</p>
+    <p>This Privacy Policy explains how we collect, receive, use, store, and disclose information when you use our games and related services, including games available on Meta Quest and the Meta Horizon Store.</p>
 
-    <h2>2. Scope of Policy</h2>
-    <p>This policy covers all video games, VR simulators, downloadable add-ons, in-app microtransactions, recurring subscription passes, and player support channels published by Dwelve.</p>
+    <h2>1. Developer and Contact Information</h2>
+    <p><strong>Developer:</strong> Dwelve<br>
+    <strong>Privacy Contact:</strong> <a href="mailto:dwelve0@gmail.com">dwelve0@gmail.com</a></p>
+    <p>If you have questions about this Privacy Policy, our data practices, or wish to make a privacy-related request, please contact us using the email address above.</p>
 
-    <h2>3. In-App Purchases (IAP), Add-ons & Subscriptions (What, When & Why)</h2>
-    <p>All financial payments are handled exclusively through Meta Quest platform gateways. Dwelve never collects, handles, or stores sensitive financial details such as credit card credentials, billing addresses, or bank authentications. We process non-financial entitlement tokens as detailed below:</p>
+    <h2>2. Scope of This Privacy Policy</h2>
+    <p>This Privacy Policy applies to Dwelve games, downloadable content, in-app purchases, game-related online features, multiplayer features where available, and related player support services.</p>
+    <p>The specific information processed by a particular game may vary depending on the features, services, and technology used by that game.</p>
 
-    <div class="table-box">
-      <table>
-        <thead>
-          <tr>
-            <th>Item Category & Examples</th>
-            <th>What Data Is Handled</th>
-            <th>When It Is Processed</th>
-            <th>Why It Is Needed</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Consumables</strong><br>TruckX Fuel Credits, City Bus Transit Tokens, Tuning Points, Nitro Packs</td>
-            <td>Meta User ID, Product SKU, Transaction Receipt Hash, Virtual Balance State, Timestamp.</td>
-            <td>At purchase trigger and during balance synchronization.</td>
-            <td>To validate purchase integrity, credit the accurate balance of virtual items, and prevent duplicate exploits.</td>
-          </tr>
-          <tr>
-            <td><strong>Non-Consumable Add-ons (DLC)</strong><br>Cargo Expansions, Alpine Map Pack, Pro Kart Chassis, Hypercar Liveries</td>
-            <td>Entitlement License ID, Meta User ID, Hardware Device ID, Entitlement Status.</td>
-            <td>Upon downloading DLC, entering locked tracks, or selecting "Restore Purchases."</td>
-            <td>To unlock premium tracks and vehicle expansions across headsets bound to your verified Meta account.</td>
-          </tr>
-          <tr>
-            <td><strong>Recurring Subscriptions</strong><br>Dwelve VIP Racing Pass, Monthly Route License Club</td>
-            <td>Subscription ID, Expiration Timestamp, Auto-Renewal Flag, Meta Entitlement Token.</td>
-            <td>Upon app launch, periodic server handshake, and entering VIP events.</td>
-            <td>To verify continuous subscription validity, grant VIP perks, and terminate access automatically upon cancellation.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h2>4. Information We Collect</h2>
-    <h3>A. Provided by Meta</h3>
+    <h2>3. Information We May Collect or Receive</h2>
+    <div class="sub-section-title">A. Meta Platform Information</div>
+    <p>When you use features that rely on Meta platform services, we may receive limited information made available through those services. Depending on the game and the features you use, this may include:</p>
     <ul>
-      <li>Meta User ID, username/display name, and avatar configuration data.</li>
-      <li>Hardware device model, firmware/OS build, region/locale code.</li>
-      <li>Multiplayer room session tokens and matchmaking ping.</li>
+      <li>Meta/platform user identifier</li>
+      <li>Display name or username</li>
+      <li>Information necessary to provide platform-related game features</li>
+      <li>Multiplayer or session information</li>
+      <li>Purchase or entitlement information</li>
     </ul>
+    <p>We use this information only as necessary to operate the game and provide the requested functionality.</p>
+    <p>Meta may independently collect and process information through its platform and services. Such processing is governed by Meta's applicable privacy policies and terms.</p>
 
-    <h3>B. Gameplay, VR Movement & Technical Telemetry</h3>
+    <h2>4. Device and Technical Information</h2>
+    <p>Depending on the game and its technical requirements, we may receive or process limited technical information necessary to operate, maintain, secure, and troubleshoot the game. This may include:</p>
     <ul>
-      <li>Vehicle physics friction telemetry, mission career saves, and lap times.</li>
-      <li><strong>VR Movement & Tracking:</strong> Headset and controller spatial coordinates are used strictly in real-time on your local device to render the virtual cockpit and hands. We do not use movement data to identify individuals or for behavioral surveillance.</li>
-      <li>Frame latency benchmarks, error diagnostics, and crash logs.</li>
+      <li>Device or headset model</li>
+      <li>Operating system or firmware information</li>
+      <li>Game/application version</li>
+      <li>Technical configuration information</li>
+      <li>Error information</li>
+      <li>Crash reports</li>
+      <li>Performance and diagnostic information</li>
     </ul>
+    <p>We do not collect information simply because it may be technically available through a platform or SDK. The information processed depends on the actual functionality and services used by the applicable game.</p>
 
-    <h2>5. How We Use Information</h2>
+    <h2>5. Gameplay and Progression Information</h2>
+    <p>Where a game provides saved progress, online features, leaderboards, or similar functionality, we may process information such as:</p>
     <ul>
-      <li>Operate and optimize our vehicle physics engines and 72/90/120 FPS render loops.</li>
-      <li>Authenticate ownership rights and synchronize cloud save profiles.</li>
-      <li>Mitigate telemetry tampering, leaderboard cheating, and griefing.</li>
+      <li>Game progression</li>
+      <li>Unlocks</li>
+      <li>Scores or lap times</li>
+      <li>Game settings</li>
+      <li>Mission or career progress</li>
+      <li>Other information necessary to maintain game functionality</li>
     </ul>
+    <p>This information may be used to provide gameplay features, maintain saved progress, synchronize supported game data, troubleshoot issues, and protect the integrity of the game.</p>
 
-    <h2>6. Analytics & Service Providers</h2>
-    <p>We work exclusively with core platform providers (Meta Horizon Platform Services) and crash analytics SDKs. Dwelve does not sell, rent, or trade Meta user data or telemetry to third-party data brokers or behavioral advertisers.</p>
+    <h2>6. Multiplayer and Online Features</h2>
+    <p>Some Dwelve games may provide multiplayer, matchmaking, online sessions, or other connected features. When you use these features, we may process information necessary to establish and operate the relevant game session. Depending on the game, this may include:</p>
+    <ul>
+      <li>Platform or player identifier</li>
+      <li>Display name</li>
+      <li>Multiplayer session information</li>
+      <li>Matchmaking information</li>
+      <li>Game state</li>
+      <li>Gameplay-related information</li>
+    </ul>
+    <p>This information is used to provide and maintain multiplayer functionality, troubleshoot technical issues, and maintain the security and integrity of online game features.</p>
 
-    <h2>7. Children's Privacy</h2>
-    <p>Our titles comply with Meta account age standards. We do not knowingly collect personal information from children under the platform's minimum age. For inquiries, email <a href="mailto:dwelve0@gmail.com">dwelve0@gmail.com</a>.</p>
+    <h2>7. VR Headset and Controller Information</h2>
+    <p>Our VR games may process headset and controller information, including position, orientation, movement, and controller input, when necessary to provide VR gameplay and interaction.</p>
+    <p>For example, headset and controller tracking may be processed in real time to render the virtual environment, vehicle cockpit, hands, controls, or other game elements.</p>
+    <p>Where tracking information is processed locally on the device, it is not transmitted to or stored by Dwelve for the purpose of identifying or profiling individual users.</p>
+    <p>We do not use VR tracking information for behavioral surveillance or to identify a person outside the functionality required to operate the game.</p>
 
-    <h2>8. Your Rights & Data Deletion</h2>
-    <p>Users may request the complete deletion of their account records and progression data by emailing <strong>dwelve0@gmail.com</strong> with their Meta Display Name and Meta User ID.</p>
+    <h2>8. In-App Purchases and Digital Content</h2>
+    <p>Our games may offer in-app purchases, downloadable content, virtual items, upgrades, or other digital content through the Meta Horizon Store or related platform services.</p>
+    <p>Purchases are processed by Meta or the applicable platform provider.</p>
+    <p>Dwelve does not collect or store your credit card number, debit card number, bank account information, or other payment-card credentials.</p>
+    <p>To provide purchased content, we may receive or process limited purchase-related information made available through the platform. Depending on the game and purchase type, this may include:</p>
+    <ul>
+      <li>Product or SKU identifier</li>
+      <li>Purchase or transaction identifier</li>
+      <li>Entitlement information</li>
+      <li>Purchase status</li>
+      <li>Information necessary to verify ownership of purchased content</li>
+      <li>Information necessary to restore eligible purchases</li>
+    </ul>
+    <p>We use purchase-related information to:</p>
+    <ul>
+      <li>Verify purchases</li>
+      <li>Grant purchased content</li>
+      <li>Restore eligible purchases</li>
+      <li>Maintain access to purchased content</li>
+      <li>Prevent unauthorized use or duplicate fulfillment</li>
+      <li>Troubleshoot purchase-related problems</li>
+    </ul>
+    <p>The specific purchase information available to Dwelve depends on the Meta platform services and purchasing functionality used by the game.</p>
+    <p>Meta independently handles payment processing and may process transaction information according to its applicable privacy policy and terms.</p>
 
-    <h2>9. Meta Quest Platform Precedence</h2>
-    <p>Our software operates within the Meta Quest runtime ecosystem. Your device hardware usage and account settings remain bound by Meta's Terms of Service and Privacy Policy.</p>
+    <h2>9. Crash Reports and Diagnostics</h2>
+    <p>Our games may use crash reporting or diagnostic services to identify technical problems and improve stability. Depending on the service used, diagnostic information may include:</p>
+    <ul>
+      <li>Crash reports</li>
+      <li>Error information</li>
+      <li>Application version</li>
+      <li>Device or operating system information</li>
+      <li>Technical logs</li>
+      <li>Performance information</li>
+    </ul>
+    <p>Diagnostic information is used to identify bugs, investigate crashes, improve stability, and maintain the functionality of our games.</p>
+    <p>Only third-party diagnostic or analytics services actually used by the applicable game should be considered covered by this section.</p>
+
+    <h2>10. How We Use Information</h2>
+    <p>Depending on the game and features you use, information may be used to:</p>
+    <ul>
+      <li>Provide and operate our games</li>
+      <li>Provide VR gameplay and interaction</li>
+      <li>Maintain saved game progress</li>
+      <li>Provide multiplayer and online functionality</li>
+      <li>Verify ownership of purchased content</li>
+      <li>Deliver purchased items and downloadable content</li>
+      <li>Restore eligible purchases</li>
+      <li>Maintain game security and integrity</li>
+      <li>Detect unauthorized access or manipulation</li>
+      <li>Investigate crashes and technical problems</li>
+      <li>Improve game performance and stability</li>
+      <li>Respond to player support requests</li>
+      <li>Comply with applicable legal obligations</li>
+    </ul>
+    <p>We do not use information for purposes unrelated to the operation of our games unless such use is separately disclosed or required by law.</p>
+
+    <h2>11. Information Sharing</h2>
+    <p>Dwelve does not sell, rent, trade, or share users' personal information with third parties for advertising, marketing, profiling, or other commercial purposes.</p>
+    <p>Information collected or received by Dwelve is used solely to operate, maintain, secure, and support our games and their features.</p>
+    <p>We do not provide users' personal information to third-party companies, data brokers, advertisers, or marketing organizations.</p>
+    <p>Our games may use Meta platform services and other technical services that are necessary for the operation of the game. Where information is processed directly by those platform or service providers as part of their own services, that processing is governed by the provider's applicable privacy policy and terms. Dwelve does not sell or otherwise disclose users' personal information to those providers for independent commercial purposes.</p>
+    <p>Where required by applicable law, Dwelve may disclose information to a competent authority or other authorized party in response to a valid legal requirement. Any such disclosure will be limited to the information required by law.</p>
+
+    <div class="sub-section-title">No Sale or Commercial Sharing of Personal Information</div>
+    <p>Dwelve does not sell, rent, lease, or trade personal information.</p>
+    <p>We do not use personal information for third-party behavioral advertising or provide personal information to advertising networks for targeted advertising.</p>
+
+    <h2>12. Data Retention</h2>
+    <p>We retain information only for as long as reasonably necessary for the purposes described in this Privacy Policy. Retention periods may depend on the type of information and why it is processed. Information may be retained as necessary to:</p>
+    <ul>
+      <li>Provide game functionality</li>
+      <li>Maintain saved progress</li>
+      <li>Verify purchases and entitlements</li>
+      <li>Maintain security</li>
+      <li>Troubleshoot technical issues</li>
+      <li>Resolve disputes</li>
+      <li>Comply with legal obligations</li>
+      <li>Enforce applicable agreements</li>
+    </ul>
+    <p>When information is no longer reasonably required, it may be deleted or anonymized where appropriate.</p>
+
+    <h2>13. Data Deletion Requests</h2>
+    <p>You may request deletion of personal information associated with your use of a Dwelve game by contacting: <a href="mailto:dwelve0@gmail.com">dwelve0@gmail.com</a></p>
+    <p>To help us identify the relevant account or game information, your request may include your Meta display name, platform user identifier, game name, and any other information reasonably necessary to locate the relevant records.</p>
+    <p>We will review and process deletion requests in accordance with applicable law and our legitimate operational requirements.</p>
+    <p>Some information may need to be retained where necessary to:</p>
+    <ul>
+      <li>Comply with legal obligations</li>
+      <li>Maintain required transaction or financial records</li>
+      <li>Resolve disputes</li>
+      <li>Prevent fraud or abuse</li>
+      <li>Protect the security of our services</li>
+      <li>Enforce applicable agreements</li>
+    </ul>
+    <p>Where information must be retained for one of these reasons, it will be retained only for the applicable purpose and period.</p>
+
+    <h2>14. Data Security</h2>
+    <p>We take reasonable technical and organizational measures designed to protect information against unauthorized access, loss, misuse, alteration, or disclosure.</p>
+    <p>However, no method of electronic transmission, storage, or processing can be guaranteed to be completely secure.</p>
+
+    <h2>15. International Data Processing</h2>
+    <p>Depending on the services used by a particular game, information may be processed or stored in countries other than the country in which you live.</p>
+    <p>Where applicable, we take reasonable measures to protect information when it is transferred or processed internationally.</p>
+    <p>Third-party providers and platform operators may have their own international data-processing practices, which are governed by their respective privacy policies and terms.</p>
+
+    <h2>16. Children's Privacy</h2>
+    <p>Our games operate within the age and account requirements established by the applicable platform, including Meta's requirements for Meta Quest users.</p>
+    <p>We do not knowingly request or intentionally collect personal information from children in violation of applicable laws or platform requirements.</p>
+    <p>If you believe that a child has provided personal information to us in a manner that violates applicable requirements, please contact us at: <a href="mailto:dwelve0@gmail.com">dwelve0@gmail.com</a>. We will review the request and take appropriate action where required.</p>
+
+    <h2>17. Third-Party Privacy Policies</h2>
+    <p>Our games may rely on Meta and other third-party services. Those services may have their own privacy policies and terms governing information that they independently collect or process.</p>
+    <p>We encourage users to review the privacy policies of Meta and any applicable third-party services used by the game.</p>
+    <p>Dwelve is responsible for the information practices described in this Privacy Policy and does not control the independent data practices of third-party platform providers.</p>
+
+    <h2>18. Your Privacy Rights</h2>
+    <p>Depending on your location and applicable law, you may have rights relating to your personal information, including rights to request access, correction, deletion, or other forms of data control.</p>
+    <p>To make a privacy request, contact: <a href="mailto:dwelve0@gmail.com">dwelve0@gmail.com</a>. We may need to verify the request before taking action in order to protect user information and prevent unauthorized requests.</p>
+
+    <h2>19. Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes to our games, services, technology, legal requirements, or data practices.</p>
+    <p>When we make changes, we will update the Last Updated date at the beginning of this Privacy Policy.</p>
+    <p>Your continued use of our games after an updated Privacy Policy becomes effective means that the updated policy applies to your use of the applicable game, subject to applicable law.</p>
+
+    <h2>20. Meta Quest Platform</h2>
+    <p>Our games operate within the Meta Quest ecosystem and may use Meta platform services.</p>
+    <p>Meta controls certain aspects of the Meta Quest platform, account system, store, payment processing, and platform-level data processing.</p>
+    <p>Information independently collected or processed by Meta is governed by Meta's applicable privacy policy and terms.</p>
+    <p>This Privacy Policy applies to Dwelve's own collection, receipt, use, storage, and disclosure of information associated with our games and services.</p>
+
+    <h2>21. Contact Us</h2>
+    <p>If you have questions, concerns, or requests regarding this Privacy Policy or the handling of your information, contact:<br>
+    <strong>Dwelve</strong><br>
+    <strong>Email:</strong> <a href="mailto:dwelve0@gmail.com">dwelve0@gmail.com</a></p>
   </div>
 
-  <footer>DWELVE STUDIOS © 2026 • DIRECT INBOX: DWELVE0@GMAIL.COM</footer>
+  <footer>DWELVE STUDIOS © 2026 • LAST UPDATED: SEPTEMBER 25, 2026</footer>
 </body>
 </html>
